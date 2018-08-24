@@ -37,11 +37,10 @@ public class KeyEventDemo extends JFrame
 	private static final String FILE_HEADER = "User,H.period,DD.period.t,UD.period.t,H.t,DD.t.i,UD.t.i,H.i,DD.i.e,UD.i.e," +
 			"H.e,DD.e.five,UD.e.five,H.five,DD.five.Shift.r,UD.five.Shift.r,H.Shift.r,DD.Shift.r.o,UD.Shift.r.o,H.o," +
 			"DD.o.a,UD.o.a,H.a,DD.a.n,UD.a.n,H.n,DD.n.l,UD.n.l,H.l,DD.l.Return,UD.l.Return,H.Return";
-	private String URL = "https://ibm-watson-ml.mybluemix.net";
-	private String USERNAME = "969e8eb4-b06c-4bfc-bc75-b858446bdcd2";
-	private String PASSWORD = "27d1026b-9eb8-4471-ad7b-de4760e45ce8";
-	private String SCORING_URL = "https://ibm-watson-ml.mybluemix.net/v3/wml_instances/a2ea211e-8336-44d8-9162-1964acf4c2bf/published_models/09198616-1572-4c07-a79c-4a5f39f77db0/deployments/7f27fa9f-557a-488c-83ad-d2d966951292/online";
-
+	private String URL = "https://us-south.ml.cloud.ibm.com";
+	private String USERNAME = "2c383eb6-e1d4-4230-b4ed-264227181fcf";
+	private String PASSWORD = "15311162-bab9-4e32-aa1c-b56371397b71";
+	private String SCORING_URL = "https://us-south.ml.cloud.ibm.com/v3/wml_instances/0b42d0ff-3ee9-4bae-a9c3-8dbf9e5fa12b/deployments/45893a83-96ec-4bcc-9301-4816b545751b/online";
 
 	JTextArea displayArea;
 	JTextField typingArea;
@@ -102,6 +101,7 @@ public class KeyEventDemo extends JFrame
 		displayArea = new JTextArea();
 		displayArea.setEditable(false);
 		typingArea.setToolTipText("Please enter the Password");
+		displayArea.setText("Please enter password: .tie5Roanl");
 		typingArea.setPreferredSize(new Dimension(500, 20));
 		JScrollPane scrollPane = new JScrollPane(displayArea);
 		scrollPane.setPreferredSize(new Dimension(500, 225));
@@ -127,7 +127,7 @@ public class KeyEventDemo extends JFrame
 
 	/** Handle the key pressed event from the text field. */
 	public void keyPressed(KeyEvent e) {
-		displayArea.setText("");
+
 //		if(e.getKeyCode() == KeyEvent.VK_BACK_SPACE){
 //			typingArea.setText("");
 //			this.store.removeContainsOfMap();
@@ -137,7 +137,7 @@ public class KeyEventDemo extends JFrame
 
 
 		if(e.getKeyCode() == KeyEvent.VK_ENTER){
-
+			displayArea.setText("");
 			String str = typingArea.getText();
 			System.out.println(str);
 
@@ -459,10 +459,13 @@ public class KeyEventDemo extends JFrame
 				String s = String.format(("%.2f"), val);
 				displayArea.setFont(new Font("Arial Black", Font.PLAIN, 15));
 				displayArea.setText("User is: " +ja_1.get(35) + "\n" + "Confidence Score: " + s +"%");
+			}else{
+				displayArea.setText("Some Network Issues Please try after some time");
 			}
 
 		} catch (IOException e4) {
 			System.out.println("The URL is not valid.");
+			displayArea.setText("Network issue please try after some time else contact nikhil.agrawal005@gmail.com");
 			System.out.println(e4.getMessage());
 		}
 		catch (ParseException e5) {
