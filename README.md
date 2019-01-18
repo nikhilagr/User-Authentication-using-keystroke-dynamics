@@ -23,3 +23,5 @@ a)Train Test Split, where the dataset is divided into two different datasets, tr
 b)Cross Validation: Split dataset into K equal partitions(folds), Use partition 1 as testing set and remaining K-1 partitions as training set and calculate accuracy. Repeat the process K number of times and use average of all the accuracies to evaluate model performance.
 4)Deployment. 
  The logistic regression model was deployed as a service through IBM Watson.
+
+<img src = http://g.recordit.co/B6qfWgeBup.gif >
