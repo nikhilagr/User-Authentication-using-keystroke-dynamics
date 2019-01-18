@@ -30,6 +30,6 @@ As the problem is classification of user whether the user is genuine or imposter
 
 <img src= "Images/Confusion.png">
 
-### Refrences
+### References
 * https://ieeexplore.ieee.org/abstract/document/5270346
 
